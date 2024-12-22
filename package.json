@@ -49,8 +49,8 @@
     "styled-components": "^6.1.13"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^5.5.2",
-    "@strapi/sdk-plugin": "^5.2.8",
+    "@strapi/strapi": ">=5.0.0",
+    "@strapi/sdk-plugin": ">=5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.28.0",
