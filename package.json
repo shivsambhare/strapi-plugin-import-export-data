@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-import-export-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strapi plugin for importing and exporting collection data",
   "keywords": [
     "strapi",
