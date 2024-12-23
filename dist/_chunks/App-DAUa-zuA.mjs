@@ -3,7 +3,7 @@ import { useFetchClient, Page } from "@strapi/strapi/admin";
 import { Routes, Route } from "react-router-dom";
 import { Modal, Button, SingleSelect, SingleSelectOption, Typography, Loader, Main, Divider } from "@strapi/design-system";
 import { useState, useEffect } from "react";
-import { P as PLUGIN_ID } from "./index-BPoTm7Kb.mjs";
+import { P as PLUGIN_ID } from "./index-CHl7y79v.mjs";
 function useCollectionList() {
   const [collectionsList, setCollectionsList] = useState([]);
   const { get } = useFetchClient();
@@ -124,6 +124,7 @@ const ExportCSV = () => {
       setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
       alert("Failed to export data");
     }
   }

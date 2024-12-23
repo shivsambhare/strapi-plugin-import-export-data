@@ -18,14 +18,13 @@ const controller = ({ strapi: strapi2 }) => ({
     ctx.body = strapi2.plugin(PLUGIN_ID).service("service").getWelcomeMessage();
   },
   getCollections(ctx) {
-    strapi2.plugin(PLUGIN_ID).service("service").getCollections(ctx);
+    return strapi2.plugin(PLUGIN_ID).service("service").getCollections(ctx);
   },
   importData(ctx) {
-    console.log("asdadas");
-    strapi2.plugin(PLUGIN_ID).service("service").getImportData(ctx);
+    return strapi2.plugin(PLUGIN_ID).service("service").getImportData(ctx);
   },
   exportData(ctx) {
-    strapi2.plugin(PLUGIN_ID).service("service").getExportData(ctx);
+    return strapi2.plugin(PLUGIN_ID).service("service").getExportData(ctx);
   }
 });
 const controllers = {
@@ -78,15 +77,15 @@ async function importData(ctx) {
   if (!files || !files.csv) {
     return ctx.badRequest("CSV file is required");
   }
-  const file = files.csv;
   try {
+    const file = files.csv;
     const content = fs.readFileSync(file.filepath, "utf-8");
     const records = parse(content, { columns: true }) || [];
     const model = ctx?.request?.body?.collectionName;
     for (const record of records) {
       await strapi.documents(model).create({ data: record });
     }
-    return ctx.send({ message: `${records.length} records imported successfully` });
+    ctx.send({ message: `${records.length} records imported successfully` });
   } catch (error) {
     return ctx.badRequest("Failed to import data", { error });
   }
@@ -119,7 +118,6 @@ const service = ({ strapi: strapi2 }) => ({
     return getCollectionsList(ctx);
   },
   getImportData(ctx) {
-    console.log("in service importData");
     return importData(ctx);
   },
   getExportData(ctx) {

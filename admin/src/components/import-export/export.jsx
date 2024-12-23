@@ -73,6 +73,7 @@ const ExportCSV = () => {
             setIsLoading(false);
         } catch (error) {
             console.error(error);
+            setIsLoading(false);
             alert('Failed to export data');
         }
     };

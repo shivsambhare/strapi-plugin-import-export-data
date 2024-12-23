@@ -9,9 +9,9 @@ export async function importData(ctx) {
         return ctx.badRequest('CSV file is required');
     }
 
-    const file = files.csv;
-
     try {
+        const file = files.csv;
+
         // Read file synchronously
         const content = fs.readFileSync(file.filepath, 'utf-8');
 
@@ -24,7 +24,7 @@ export async function importData(ctx) {
             await strapi.documents(model).create({ data: record });
         }
 
-        return ctx.send({ message: `${records.length} records imported successfully` });
+        ctx.send({ message: `${records.length} records imported successfully` });
     } catch (error) {
         return ctx.badRequest('Failed to import data', { error });
     }

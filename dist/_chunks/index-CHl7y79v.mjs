@@ -1,7 +1,6 @@
-"use strict";
-const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
-const icons = require("@strapi/icons");
+import { useRef, useEffect } from "react";
+import { jsx } from "react/jsx-runtime";
+import { Download } from "@strapi/icons";
 const __variableDynamicImportRuntimeHelper = (glob, path, segs) => {
   const v = glob[path];
   if (v) {
@@ -22,13 +21,13 @@ const PLUGIN_ID$1 = "strapi-plugin-import-export-data";
 const PLUGIN_DISPLAY_NAME = "Import-Export Data";
 const PLUGIN_ID = PLUGIN_ID$1;
 const Initializer = ({ setPlugin }) => {
-  const ref = react.useRef(setPlugin);
-  react.useEffect(() => {
+  const ref = useRef(setPlugin);
+  useEffect(() => {
     ref.current(PLUGIN_ID);
   }, []);
   return null;
 };
-const PluginIcon = () => /* @__PURE__ */ jsxRuntime.jsx(icons.Download, {});
+const PluginIcon = () => /* @__PURE__ */ jsx(Download, {});
 const index = {
   register(app) {
     app.addMenuLink({
@@ -39,7 +38,7 @@ const index = {
         defaultMessage: PLUGIN_DISPLAY_NAME
       },
       Component: async () => {
-        const { App } = await Promise.resolve().then(() => require("./App-BWOacdKE.js"));
+        const { App } = await import("./App-DAUa-zuA.mjs");
         return App;
       }
     });
@@ -54,7 +53,7 @@ const index = {
     return Promise.all(
       locales.map(async (locale) => {
         try {
-          const { default: data } = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "./translations/en.json": () => Promise.resolve().then(() => require("./en-B4KWt_jN.js")) }), `./translations/${locale}.json`, 3);
+          const { default: data } = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "./translations/en.json": () => import("./en-Byx4XI2L.mjs") }), `./translations/${locale}.json`, 3);
           return { data, locale };
         } catch {
           return { data: {}, locale };
@@ -63,5 +62,7 @@ const index = {
     );
   }
 };
-exports.PLUGIN_ID = PLUGIN_ID;
-exports.index = index;
+export {
+  PLUGIN_ID as P,
+  index as i
+};

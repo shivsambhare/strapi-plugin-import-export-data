@@ -9,7 +9,6 @@ const service = ({ strapi }) => ({
     return getCollectionsList(ctx);
   },
   getImportData(ctx) {
-    console.log("in service importData");
     return importData(ctx);
   },
   getExportData(ctx) {

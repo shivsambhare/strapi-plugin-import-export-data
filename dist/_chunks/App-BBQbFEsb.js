@@ -5,7 +5,7 @@ const admin = require("@strapi/strapi/admin");
 const reactRouterDom = require("react-router-dom");
 const designSystem = require("@strapi/design-system");
 const react = require("react");
-const index = require("./index-D9ql2q7W.js");
+const index = require("./index-BOq2iTy2.js");
 function useCollectionList() {
   const [collectionsList, setCollectionsList] = react.useState([]);
   const { get } = admin.useFetchClient();
@@ -126,6 +126,7 @@ const ExportCSV = () => {
       setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
       alert("Failed to export data");
     }
   }
