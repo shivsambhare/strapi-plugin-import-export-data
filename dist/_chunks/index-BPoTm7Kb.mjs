@@ -38,7 +38,7 @@ const index = {
         defaultMessage: PLUGIN_DISPLAY_NAME
       },
       Component: async () => {
-        const { App } = await import("./App-CUkqdonw.mjs");
+        const { App } = await import("./App-WENQhKON.mjs");
         return App;
       }
     });

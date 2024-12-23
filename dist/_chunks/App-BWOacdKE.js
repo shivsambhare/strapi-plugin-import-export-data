@@ -5,7 +5,7 @@ const admin = require("@strapi/strapi/admin");
 const reactRouterDom = require("react-router-dom");
 const designSystem = require("@strapi/design-system");
 const react = require("react");
-const index = require("./index-sCU6ZypY.js");
+const index = require("./index-D9ql2q7W.js");
 function useCollectionList() {
   const [collectionsList, setCollectionsList] = react.useState([]);
   const { get } = admin.useFetchClient();
@@ -158,12 +158,19 @@ const ImportExport = () => {
   ] });
 };
 const HomePage = () => {
-  return /* @__PURE__ */ jsxRuntime.jsxs(designSystem.Main, { children: [
-    /* @__PURE__ */ jsxRuntime.jsx("h1", { children: "Boost Your Strapi Workflow with importing and exporting data" }),
-    /* @__PURE__ */ jsxRuntime.jsx("br", {}),
-    /* @__PURE__ */ jsxRuntime.jsx("h2", { children: "Suppoted Strapi version: 5+" }),
-    /* @__PURE__ */ jsxRuntime.jsx("h2", { children: "Suppoted file extension: csv" }),
-    /* @__PURE__ */ jsxRuntime.jsx(ImportExport, {})
+  return /* @__PURE__ */ jsxRuntime.jsxs(designSystem.Main, { padding: 8, background: "neutral100", shadow: "tableShadow", children: [
+    /* @__PURE__ */ jsxRuntime.jsxs(designSystem.Main, { paddingBottom: 4, children: [
+      /* @__PURE__ */ jsxRuntime.jsx(designSystem.Typography, { variant: "alpha", textColor: "neutral800", children: "Boost Your Strapi Workflow" }),
+      /* @__PURE__ */ jsxRuntime.jsx("br", {}),
+      /* @__PURE__ */ jsxRuntime.jsx(designSystem.Typography, { variant: "epsilon", textColor: "neutral600", children: "Import and export data seamlessly to enhance your productivity." })
+    ] }),
+    /* @__PURE__ */ jsxRuntime.jsx(designSystem.Divider, {}),
+    /* @__PURE__ */ jsxRuntime.jsxs(designSystem.Main, { paddingTop: 6, paddingBottom: 4, children: [
+      /* @__PURE__ */ jsxRuntime.jsx(designSystem.Typography, { variant: "omega", textColor: "neutral700", children: "- Supported Strapi version: 5+" }),
+      /* @__PURE__ */ jsxRuntime.jsx("br", {}),
+      /* @__PURE__ */ jsxRuntime.jsx(designSystem.Typography, { variant: "omega", textColor: "neutral700", children: "- Supported file extension: CSV" })
+    ] }),
+    /* @__PURE__ */ jsxRuntime.jsx(designSystem.Main, { paddingTop: 8, children: /* @__PURE__ */ jsxRuntime.jsx(ImportExport, {}) })
   ] });
 };
 const App = () => {

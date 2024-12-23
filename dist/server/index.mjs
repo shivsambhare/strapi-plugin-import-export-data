@@ -85,7 +85,7 @@ async function importData(ctx) {
     for (const record of records) {
       await strapi.documents(model).create({ data: record });
     }
-    ctx.send({ message: `${records.length} records imported successfully` });
+    return ctx.send({ message: `${records.length} records imported successfully` });
   } catch (error) {
     return ctx.badRequest("Failed to import data", { error });
   }

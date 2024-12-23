@@ -39,7 +39,7 @@ const index = {
         defaultMessage: PLUGIN_DISPLAY_NAME
       },
       Component: async () => {
-        const { App } = await Promise.resolve().then(() => require("./App-DI6RpTNT.js"));
+        const { App } = await Promise.resolve().then(() => require("./App-BWOacdKE.js"));
         return App;
       }
     });
